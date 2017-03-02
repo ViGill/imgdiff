@@ -39,7 +39,7 @@ func (d *binary) Compare(a, b image.Image) (image.Image, int, error) {
 		for x := 0; x < w; x++ {
 			d := diffColor(a.At(ab.Min.X+x, ab.Min.Y+y), b.At(bb.Min.X+x, bb.Min.Y+y))
 			c := color.RGBA{0, 0, 0, 0xff}
-			if d > 0 {
+			if d > 10000 {
 				c.R = 0xff
 				//c.A = uint8(100 + d*0xff/0xffff)
 				n++
